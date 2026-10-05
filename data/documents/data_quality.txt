@@ -1,0 +1,15 @@
+﻿Data Quality Validation
+
+Data quality is an important part of the Operating Room Data Pipeline because analytical results depend on reliable and consistent records.
+
+The Silver layer applies several validation rules to the surgery dataset. Duplicate surgery identifiers are detected because each surgery should represent a unique record. Duplicate records can otherwise lead to incorrect counts and misleading analytical results.
+
+The pipeline also validates duration values. Surgery duration must be greater than zero because zero or negative durations are not valid for this dataset. Waiting time is validated separately and must not contain negative values.
+
+The pipeline checks for null surgery identifiers because the surgery identifier is required to uniquely identify each record. Records with missing identifiers cannot be reliably traced through the pipeline.
+
+Additional validation includes checking the expected schema and data types of processed records. Dates, timestamps, numeric fields, and boolean values are converted into appropriate representations before analytical processing.
+
+These checks are applied before data moves from the raw ingestion stage toward analytical consumption. The goal is to ensure that the Silver dataset contains valid, consistent, and trustworthy records.
+
+Data quality validation therefore acts as a control point between raw data ingestion and downstream analytics.

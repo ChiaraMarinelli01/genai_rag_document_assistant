@@ -1,0 +1,17 @@
+Operating Room Data Pipeline
+
+This project demonstrates a data engineering pipeline for synthetic operating room data.
+
+The local pipeline uses Python and Pandas to transform raw surgery records into cleaned data. The cleaned data is loaded into PostgreSQL. Docker is used to provide the PostgreSQL database environment.
+
+The project also includes a PySpark and Databricks implementation following a Medallion-style architecture.
+
+The Bronze layer represents raw input data. The Silver layer contains cleaned and validated surgery records. Data quality checks include duplicate surgery identifiers, invalid duration values, invalid waiting times, and null surgery identifiers.
+
+The Gold layer contains analytical aggregates. Examples include surgeries by specialty, surgeries by hospital, and surgeries by operating room.
+
+Automated tests are implemented with pytest. The tests verify important transformation rules such as duplicate removal and rejection of invalid records.
+
+The dashboard is implemented with Streamlit and provides a simple analytical view of the surgery dataset.
+
+The purpose of the project is to demonstrate practical data engineering skills including ETL, SQL, PostgreSQL, Docker, PySpark, Databricks, data quality validation, testing, and analytics.

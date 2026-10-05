@@ -1,0 +1,13 @@
+﻿Operating Room Data Pipeline - Overview
+
+The Operating Room Data Pipeline is a data engineering project built around synthetic surgery records. The objective is to demonstrate an end-to-end workflow for ingesting, cleaning, validating, storing, and analyzing structured healthcare-related data.
+
+The local pipeline uses Python and Pandas to process raw surgery records. The transformation stage standardizes column names, parses dates and times, converts numeric fields, removes duplicate surgery identifiers, and rejects invalid records.
+
+After transformation, the cleaned dataset is loaded into PostgreSQL. PostgreSQL provides the relational storage layer used for SQL-based analysis and validation. Docker is used to provide a reproducible PostgreSQL database environment.
+
+The project also includes automated tests with pytest to verify important transformation rules. A Streamlit dashboard provides an interactive analytical interface for exploring the processed surgery data.
+
+A separate PySpark and Databricks implementation extends the pipeline using a Medallion-style architecture. This version separates raw ingestion, data quality processing, and analytical consumption into Bronze, Silver, and Gold layers.
+
+The project is designed as a portfolio example of practical data engineering, combining ETL, SQL, Python, testing, Docker, analytics, and distributed data processing.

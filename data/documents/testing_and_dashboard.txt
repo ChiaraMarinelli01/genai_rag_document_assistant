@@ -1,0 +1,17 @@
+﻿Testing and Dashboard
+
+Automated testing is included in the Operating Room Data Pipeline to verify important transformation and data quality rules.
+
+The project uses pytest for automated tests. Tests verify that duplicate surgery records are removed during transformation and that invalid records are rejected according to the defined validation rules.
+
+Testing provides a repeatable way to check that changes to the pipeline do not break existing transformation logic. This is particularly useful when the pipeline is extended with additional processing or validation rules.
+
+The project also includes a Streamlit dashboard for analytical exploration. The dashboard connects to the processed surgery dataset and provides a simple interface for examining key metrics.
+
+Example dashboard metrics include the total number of surgeries and average surgery duration. The dashboard can also support analysis of surgery activity across hospitals and medical specialties.
+
+The local project uses PostgreSQL as the relational database and Docker to provide the database environment. This makes the development setup easier to reproduce across different machines.
+
+The project also includes a PySpark and Databricks implementation. The Databricks pipeline separates raw, validated, and analytical data using Bronze, Silver, and Gold layers.
+
+Together, automated tests and the dashboard demonstrate two complementary aspects of the project: software reliability and practical data consumption.

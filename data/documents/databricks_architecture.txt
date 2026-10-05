@@ -1,0 +1,13 @@
+﻿Databricks Medallion Architecture
+
+The Databricks implementation of the Operating Room Data Pipeline follows a Medallion-style architecture using PySpark. The architecture separates the data lifecycle into Bronze, Silver, and Gold layers.
+
+The Bronze layer represents the raw input data. It preserves the source records and provides the initial ingestion layer for the pipeline. In the project, the raw surgery dataset contains fields such as surgery identifier, patient identifier, specialty, hospital, operating room, scheduled date, start time, duration, waiting time, emergency status, and outcome.
+
+The Silver layer contains cleaned and validated surgery records. Data quality rules are applied during this stage to remove duplicates, reject invalid duration and waiting values, and handle invalid or missing identifiers. The Silver layer provides a trusted dataset for downstream analytical processing.
+
+The Gold layer contains analytical aggregates derived from the validated Silver data. These aggregates are designed for reporting and business analysis rather than raw data storage.
+
+Examples of Gold datasets include surgery activity by medical specialty, hospital-level activity, and operating-room-level activity.
+
+This architecture separates ingestion, data quality, and analytical consumption into clearly defined stages and makes the pipeline easier to understand, test, and extend.

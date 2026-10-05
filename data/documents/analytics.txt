@@ -1,0 +1,17 @@
+﻿Gold Layer Analytics
+
+The Gold layer contains analytical datasets created from validated surgery records in the Silver layer. Its purpose is to provide structured information that can be used for reporting, monitoring, and analytical exploration.
+
+One analytical aggregate groups surgeries by medical specialty. This view can be used to compare the number of surgeries performed by different specialties and to analyze metrics such as average surgery duration and average waiting time.
+
+Another aggregate groups surgery activity by hospital. Hospital-level analysis can support comparisons of workload and emergency activity across different facilities.
+
+A third aggregate groups records by operating room. This view provides information about workload distribution across rooms and can help identify differences in utilization or activity.
+
+The Gold layer can also contain derived metrics such as surgery counts, average duration, average waiting time, completed procedures, cancelled procedures, and emergency surgery counts.
+
+These datasets are intentionally more aggregated than the Silver layer. The Silver layer is designed for trusted record-level data, while the Gold layer is designed for analytical consumption.
+
+The resulting Gold datasets can be queried using SQL or explored through visualization tools. In the broader project, analytical results are also exposed through a Streamlit dashboard.
+
+The Gold layer therefore represents the final analytical stage of the Medallion pipeline.
